@@ -26,8 +26,8 @@ bot = ChatBot('Doctor',   read_only=True,
 trainer = ChatterBotCorpusTrainer(bot)
 # put the yaml file under: \.venv\Lib\site-packages\chatterbot_corpus\data\custom
 # todo: change from short for prod
-#  only do this once for web app because takes some times
-#  trainer.train("chatterbot.corpus.custom.medical_short")
+#  only do this once locally then comment out for web app because takes some times
+# trainer.train("chatterbot.corpus.custom.medical")
 
 @app.route('/')
 def homepage():
