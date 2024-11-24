@@ -8,29 +8,24 @@ import spacy
 import chatterbot_corpus
 import yaml
 
-#python -m spacy download en_core_web_sm
-
-
-def chat(t1):    
-    return "test" 
-
+# python -m spacy download en_core_web_sm
+  
 # Create object of ChatBot class with Storage Adapter
-bot = ChatBot('Doctor',   read_only=True)
-bot = ChatBot(
-    'Doctor',
+bot = ChatBot('Doctor',   read_only=True,
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
-    database_uri='sqlite:///database.sqlite3'
-)
-bot = ChatBot(
-    'Doctor',
+    database_uri='sqlite:///database.sqlite3',
     logic_adapters=[
         'chatterbot.logic.BestMatch'
         ],
 )
+
 trainer = ChatterBotCorpusTrainer(bot)
 # put the yaml file under: \.venv\Lib\site-packages\chatterbot_corpus\data\custom
-#trainer.train("chatterbot.corpus.custom.medical")
-response = bot.get_response("diabetes")
-print("response")
-print(response)
+# todo: only do this once for web app:
+trainer.train("chatterbot.corpus.custom.medical")
+
+#testing
+#response = bot.get_response("test")
+#print("response")
+#print(response)
   
