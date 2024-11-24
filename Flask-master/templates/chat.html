@@ -15,7 +15,7 @@
   <!-- Tab panes -->
   <div class="tab-content">
    
-    <div role="tabpanel" class="tab-pane" active id="home">
+    <div role="tabpanel" class="tab-pane active"  id="home">
     <h2>Chat </h2>
     <p>Hi! Enter your question:  </p>
     <form name="chatform" action="/chat/" method="POST"> 
@@ -23,8 +23,14 @@
     <input type="submit">
     </form> 
   <hr>
+  <table> 
+    <tr> <td> 
     <p>       {{ user_question }}    </p> 
+  </td></tr>
+  <tr><td> 
     <p>       {{ bot_answer }}    </p> 
+  </td></tr>
+  </table>
   </div>
 
   <div role="tabpanel" class="tab-pane" id="tab2">    
