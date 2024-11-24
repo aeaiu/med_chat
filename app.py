@@ -7,7 +7,7 @@ import nltk
 import string
 from nltk.corpus import stopwords
 import spacy
-import chatterbot_corpus
+#import chatterbot_corpus
 import yaml
 
 app = Flask(__name__)
